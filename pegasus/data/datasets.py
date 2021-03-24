@@ -220,9 +220,9 @@ class TFDSDataset(BaseDataset):
     # Those supervised datasets have a single dataset and do not provide
     # train/validation/test splits. We split the dataset 80/10/10.
     split_patterns = {
-        "train": "train[:80%]",
-        "validation": "train[80%:90%]",
-        "test": "train[90%:]"
+        "train": "train[:42137]",
+        "validation": "train[42137:42138]",
+        "test": "train[42138:]"
     }
     dataset, info = tfds.load(
         self.override_build(build),
@@ -232,11 +232,11 @@ class TFDSDataset(BaseDataset):
         with_info=True,
         data_dir=self.data_dir)
     if split == "train":
-      num_examples = info.splits["train"].num_examples * 0.8
+      num_examples = 42137  # info.splits["train"].num_examples * 0.8
     elif split == "validation":
-      num_examples = info.splits["train"].num_examples * 0.1
+      num_examples = 1  # info.splits["train"].num_examples * 0.1
     else:
-      num_examples = info.splits["train"].num_examples * 0.1
+      num_examples = 1  # info.splits["train"].num_examples * 0.1
     return dataset, num_examples
 
   def _split_train_98_1_1(self, build, split, shuffle_files):

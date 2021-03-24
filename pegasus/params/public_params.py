@@ -197,8 +197,8 @@ def reddit_tifu_long_transformer(param_overrides):
   return transformer_params(
       {
           "train_pattern": "tfds_transformed:reddit_tifu/long-train",
-          "dev_pattern": "tfds_transformed:reddit_tifu/long-validation",
-          "test_pattern": "tfds_transformed:reddit_tifu/long-test",
+          "dev_pattern": "tfrecord:pegasus/data/testdata/*",
+          "test_pattern": "tfrecord:pegasus/data/testdata/*",
           "max_input_len": 1024,
           "max_output_len": 128,
           "train_steps": 8000,

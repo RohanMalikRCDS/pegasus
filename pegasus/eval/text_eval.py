@@ -33,7 +33,7 @@ _BLEU_METRIC = "bleu"
 _REPETITION_METRIC = "repetition"
 _LENGTH_METRIC = "length"
 
-_LOG_EVERY_N = 100
+_LOG_EVERY_N = 1
 _LINE_SEPARATOR = "-----:"
 
 
