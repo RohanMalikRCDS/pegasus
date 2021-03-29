@@ -13,3 +13,7 @@ venv.bak/
 
 # Checkpoints
 ckpt/
+
+# PyCharm
+.idea
+.DS_Store
